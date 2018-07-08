@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceRoot}",
+                "${config:arduino.path}/arduino/avr/cores/arduino",
+                "${config:arduino.path}/hardware/tools/avr/avr/include",
+                "${config:arduino.path}/hardware/arduino/avr/libraries/EEPROM/src",
+                "${config:arduino.path}/hardware/tools/avr/lib/gcc/avr/4.9.2/include",
+                "${config:arduino.path}/hardware/tools/avr/lib/gcc/avr/4.9.2/include-fixed",
+                "${config:arduino.path}/hardware/arduino/avr/variants/standard"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "ARDUINO=100",
+                "__AVR_ATmega328P__",
+                "__AVR__",
+                "__AVR_ENHANCED__"            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "path": [
+                    "${workspaceRoot}",
+                    "${config:arduino.path}"
+                ]
+            },
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
