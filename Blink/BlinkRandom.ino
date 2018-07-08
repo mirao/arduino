@@ -2,6 +2,19 @@
   Turns the builtin LED on/off for one second randomly, repeatedly
 */
 
+// LED state
+struct led_state
+{
+  int voltage;
+  const char *desc;
+};
+
+// Possible LED voltages/states
+struct led_state led_states[] = {
+  { LOW, "off" },
+  { HIGH, "on" }
+};
+
 // The setup function runs once when you press reset or power the board
 void setup() {
   // Initialize digital pin LED_BUILTIN as an output.
@@ -13,14 +26,9 @@ void setup() {
 
 // The loop function runs over and over again forever
 void loop() {
-  int on = random(2); // LED on/off
+  int state = random(2); // LED on/off
+  digitalWrite(LED_BUILTIN, led_states[state].voltage);    // Turn the LED on/off by making the voltage HIGH/LOW
   Serial.print("LED is ");
-  if (on == 0) {
-    digitalWrite(LED_BUILTIN, LOW);    // Turn the LED off by making the voltage LOW
-    Serial.println("off");
-  } else {
-    digitalWrite(LED_BUILTIN, HIGH);   // Turn the LED on (HIGH is the voltage level)
-    Serial.println("on");
-  }
+  Serial.println(led_states[state].desc); // Print LED state
   delay(1000);                       // Wait for a second
 }
