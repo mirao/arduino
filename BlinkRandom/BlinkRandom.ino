@@ -1,5 +1,5 @@
 /*
-  Turns the builtin LED on/off for one second randomly, repeatedly
+  Turns the builtin LED on/off (and also LED on PIN 13) for one second randomly, repeatedly
 */
 
 // LED state
