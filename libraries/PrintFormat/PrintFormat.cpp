@@ -5,8 +5,6 @@
 #include "Arduino.h"
 #include "PrintFormat.h"
 
-PrintFormat::PrintFormat() {}
-
 /**
  * Print voltage on given pin
  */

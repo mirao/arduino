@@ -8,7 +8,6 @@
 class PrintFormat
 {
     public:
-        PrintFormat();
         void printVoltage(int pin);
     private:
         static constexpr double _voltageDiv = 5.0 / 1024;
