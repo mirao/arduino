@@ -3,10 +3,26 @@
     * Positive count means clockwise rotating, negative count means counter clockwise rotating
     * Push button clears of counter
     
-    Pins between Arduino and rotary encoder:
-        * A0 <-> SW
-        * A1 <-> CLK
-        * A2 <-> DT
+    Stuff:
+        - breadboard
+        - rotary encoder with push button: https://www.aliexpress.com/item/Free-Shipping-360-rotary-encoder-FOR-Module-Electronic-Component/1000001872933.html?spm=a2g0s.9042311.0.0.7fb94c4dlnj18B
+        - 2 capacitors 100 nF (for debouncing, see https://www.allaboutcircuits.com/projects/how-to-use-a-rotary-encoder-in-a-mcu-based-project/)
+        - 2 resistors 20 kOhm (for debouncing)
+
+    Schema:
+        A0 <-> SW
+
+        A1 <-> Cap1 <-> GND
+        |
+        Res1
+        |
+        CLK
+                
+        A2 <-> Cap2 <-> GND
+        |
+        Res2
+        |
+        DT
 */
 
 const int SW = A0; // Push button on encoder, used for clearing of counter. LOW means pushed.
