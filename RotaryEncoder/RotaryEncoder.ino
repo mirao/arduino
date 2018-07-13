@@ -1,12 +1,12 @@
 /*
     Show count of rotary encoder turns
-    Positive count means counter clockwise rotating, negative count means clockwise rotating
-    Push button causes clearing of counter
+    * Positive count means clockwise rotating, negative count means counter clockwise rotating
+    * Push button clears of counter
     
-    Pins:
-        * A0 - SW
-        * A1 - CLK
-        * A2 - DT
+    Pins between Arduino and rotary encoder:
+        * A0 <-> SW
+        * A1 <-> CLK
+        * A2 <-> DT
 */
 
 const int SW = A0; // Push button on encoder, used for clearing of counter. LOW means pushed.
@@ -47,13 +47,11 @@ int RotaryEncoder::getCnt()
     return count;
 }
 
-// Decrement counter when encoder turns clockwise
 void RotaryEncoder::decCnt()
 {
     count--;
 }
 
-// Increment counter when encoder turns counter clockwise
 void RotaryEncoder::incCnt()
 {
     count++;
@@ -114,10 +112,10 @@ void loop() {
         int currentDt = rotaryEncoder.getCurrentDt();
         if (currentDt == currentClk) {
             // Clockwise rotating
-            rotaryEncoder.decCnt();
+            rotaryEncoder.incCnt();
         } else {
             // Counter clockwise rotating
-            rotaryEncoder.incCnt();
+            rotaryEncoder.decCnt();
         }
         rotaryEncoder.printCnt();
     }
