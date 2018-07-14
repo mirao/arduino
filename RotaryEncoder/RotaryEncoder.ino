@@ -8,6 +8,9 @@
         - rotary encoder with push button: https://www.aliexpress.com/item/Free-Shipping-360-rotary-encoder-FOR-Module-Electronic-Component/1000001872933.html?spm=a2g0s.9042311.0.0.7fb94c4dlnj18B
         - 2 capacitors 100 nF (for debouncing, see https://www.allaboutcircuits.com/projects/how-to-use-a-rotary-encoder-in-a-mcu-based-project/)
         - 2 resistors 20 kOhm (for debouncing)
+        - alternative config: 
+            - 2 capacitors 1 uF
+            - 2 resistors 3k3
 
     Schema:
         A0 <-> SW
