@@ -15,8 +15,9 @@
     * 6 - LED5 input
 
     Stuff:
-    - 5x LED
-    - 1x resistor 300 connected between all LED's output and ground   
+    - 1x potentiometer 1k Ohm
+    - 5x yellow LED
+    - 1x resistor 300 Ohm connected between all LED's output and ground   
 */
 
 const byte potPin = A5;
